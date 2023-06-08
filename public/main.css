@@ -6,9 +6,57 @@
 }
 
 :root{
-    --main-color: #123456;
+    --main-color: #5523EE;
 }
 
 body{
-    background-color: red;
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 40%;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #ddd;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+h1{
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+form div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form .task-input{
+    width: 70%;
+    padding: 3px 10px;
+    background-color: #fafafa;
+    border: 2px solid #ececec;
+    border-radius: 5px 0 0 5px;
+    outline-color: #bbb;
+    font-size: 18px;
+
+}
+
+form .send-task{
+    width: 15%;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 18px;
+    border: 1.5px solid var(--main-color);
+    border-radius: 0 3px 3px 0;
+    outline-color: var(--main-color);
 }
