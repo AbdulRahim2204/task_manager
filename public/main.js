@@ -5,7 +5,7 @@ getTask.addEventListener('submit', async (e) => {
     const task = getTask.task.value;
 
     try{
-        const res = fetch('../add-task', {
+        const res = await fetch('../add-task', {
             method: 'POST',
             body: JSON.stringify({taskName: task}),
             headers: {'Content-Type': 'application/json'}

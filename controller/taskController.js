@@ -3,9 +3,10 @@ const get_tasks = (req, res) => {
 }
 
 const post_task = (req, res) => {
-    taskName = req.body.task;
+    const { taskName } = req.body;
+
     console.log(taskName);
-    res.send({task: taskName, redirect: 'index'});
+    res.send({taskName, redirect: 'index'});
 }
 
 module.exports = {
