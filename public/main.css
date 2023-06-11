@@ -13,6 +13,7 @@ body{
     width: 100%;
     background-color: #eee;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 }
@@ -58,4 +59,38 @@ form .send-task{
     border: 1.5px solid var(--main-color);
     border-radius: 0 3px 3px 0;
     outline-color: var(--main-color);
+}
+
+.task-list{
+    width: 40%;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #ddd;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.task-list .task{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list .task p{
+    font-size: 18px;
+}
+
+.task-list .task .edit-delete{
+    width: 13%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list .task .edit-delete img{
+    width: 30%;
+    cursor: pointer;
 }
