@@ -4,11 +4,12 @@ const taskRouter = require('./routes/taskRouter');
 
 const app = express();
 const PORT = 3000;
-const uri = "mongodb+srv://abdelrheem2204:AbdoTaskManager@task-manager.mtdnmf4.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://abdelrheem2204:AbdoTaskManager@task-manager.mtdnmf4.mongodb.net/task-manager?retryWrites=true&w=majority";
 
 const main = async (uri) => {
     try{
         await mongoose.connect(uri);
+
         app.listen(PORT, (err) => {console.log(err)});
 
     } catch(err) {
