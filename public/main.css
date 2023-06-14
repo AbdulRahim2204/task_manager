@@ -68,37 +68,41 @@ form .send-task:hover{
     font-weight: bold;
 }
 
-.task-list{
+#task-list{
     width: 40%;
     margin-top: 50px;
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 10px #ddd;
-    background-color: white;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    align-content: space-between;
 }
 
-.task-list .task{
+#task-list .task{
     width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #ddd;
+    background-color: white;
+    color: var(--main-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.task-list .task p{
+#task-list .task p{
     font-size: 18px;
 }
 
-.task-list .task .edit-delete{
+#task-list .task .edit-delete{
     width: 13%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.task-list .task .edit-delete img{
+#task-list .task .edit-delete img{
     width: 30%;
     cursor: pointer;
 }
