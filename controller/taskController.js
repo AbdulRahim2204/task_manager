@@ -1,6 +1,6 @@
 const Task = require('../model/task');
 
-const get_tasks = async (req, res) => {
+const get_tasks = (req, res) => {
     Task.find()
     .then((data) => {
         res.render('index', {data});
@@ -10,9 +10,9 @@ const get_tasks = async (req, res) => {
     })
 }
 
-const post_task = async (req, res) => {
+const post_task = (req, res) => {
     const { taskName } = req.body;
-    const task = new Task({name: taskName});
+    const task = new Task({name: taskName, complete: false});
 
     task.save()
     .then((newTask) => {
@@ -21,7 +21,13 @@ const post_task = async (req, res) => {
     }).catch((err) => {console.log(err)});
 }
 
+const delete_task = async (req, res) => {
+    const taskId = req.params.id;
+
+}
+
 module.exports = {
     get_tasks,
-    post_task
+    post_task,
+    delete_task
 }
