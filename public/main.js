@@ -57,12 +57,13 @@ getTask.addEventListener('submit', async (e) => {
     }
 });
 
-// this code is used to send a delet request to the server
+// this code is used to send a delete request to the server
 const deleteTask = document.getElementById('delete');
-
 deleteTask.addEventListener('click', async () => {
     try{
-        deleteUri = `../delete-task/${newTaskId}`;
+        const taskId = deleteTask.parentElement.parentElement.dataset.taskid;
+        console.log(taskId);
+        deleteUri = `../delete-task/${taskId}`;
         const res = await fetch(deleteUri, {method: 'DELETE'});
 
     } catch(err){

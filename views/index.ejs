@@ -19,21 +19,21 @@
         <div id="task-list">
             <% if(Array.isArray(data)) { %>
                 <% data.forEach(task => { %>
-                    <div class="task">
+                    <div class="task" data-taskid="<%= task._id %>">
                         <p class="task-name"><%= task.name %></p>
                         <div class="edit-delete">
-                            <img src="../IMG/edit.svg" alt="Edit Icon">
-                            <img src="../IMG/delete.svg" alt="Delete Icon">
+                            <img id="edit" src="../IMG/edit.svg" alt="Edit Icon">
+                            <img id="delete" src="../IMG/delete.svg" alt="Trashcan Icon">
                         </div>
                     </div>
                 <% }) %>
 
             <% } else { %>
-                <div class="task">
+                <div class="task" data-taskid="<%= task._id %>">
                     <p class="task-name"><%= data.name %></p>
                     <div class="edit-delete">
                         <img id="edit" src="../IMG/edit.svg" alt="Edit Icon">
-                        <img id="delete" src="../IMG/delete.svg" alt="Delete Icon">
+                        <img id="delete" src="../IMG/delete.svg" alt="Trashcan Icon">
                     </div>
                 </div>
             <% } %>
