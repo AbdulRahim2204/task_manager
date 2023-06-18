@@ -58,15 +58,16 @@ getTask.addEventListener('submit', async (e) => {
 });
 
 // this code is used to send a delete request to the server
-const deleteTask = document.getElementById('delete');
-deleteTask.addEventListener('click', async () => {
-    try{
-        const taskId = deleteTask.parentElement.parentElement.dataset.taskid;
-        console.log(taskId);
-        deleteUri = `../delete-task/${taskId}`;
-        const res = await fetch(deleteUri, {method: 'DELETE'});
-
-    } catch(err){
-        console.log(err);
-    }
+const deleteTask = document.querySelectorAll('#task-list .delete');
+deleteTask.forEach((deleteBut) => {
+    deleteBut.addEventListener('click', async (event) => {
+        try{
+                const taskId = event.target.parentElement.parentElement.dataset.taskid;
+                deleteUrl = `../delete-task/${taskId}`;
+                const res = await fetch(deleteUrl, {method: 'DELETE'});
+            
+            } catch(err){
+                console.log(err);
+            }
+    })
 })
