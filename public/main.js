@@ -52,6 +52,8 @@ getTask.addEventListener('submit', async (e) => {
         // append the new task inside the tasks list
         taskList.appendChild(taskContainer);
 
+        // location.assign('../');
+
     } catch(err) {
         console.log(err);
     }
@@ -65,6 +67,10 @@ deleteTask.forEach((deleteBut) => {
                 const taskId = event.target.parentElement.parentElement.dataset.taskid;
                 deleteUrl = `../delete-task/${taskId}`;
                 const res = await fetch(deleteUrl, {method: 'DELETE'});
+                const data = await res.json();
+
+                const taskToDelete = document.querySelector(`[data-taskid="${data._id}"]`);
+                taskToDelete.remove();
             
             } catch(err){
                 console.log(err);

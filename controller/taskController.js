@@ -24,9 +24,8 @@ const post_task = (req, res) => {
 const delete_task = (req, res) => {
     const taskId = req.params.id;
     Task.findByIdAndDelete(taskId)
-    .then(doc => {
-        console.log(doc);
-        res.send(doc);
+    .then(task => {
+        res.send(task);
     })
     .catch(err => console.log(err));
 
