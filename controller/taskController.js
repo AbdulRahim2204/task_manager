@@ -1,6 +1,6 @@
 const Task = require('../model/task');
 
-const get_tasks = (req, res) => {
+const get_all_tasks = (req, res) => {
     Task.find()
     .then((data) => {
         res.render('index', {data});
@@ -21,6 +21,14 @@ const post_task = (req, res) => {
     }).catch((err) => {console.log(err)});
 }
 
+const get_task = async (req, res) => {
+    res.json({"MSG": "hello spcific task"});
+}
+
+const update_task = async (req, res) => {
+    res.json({"MSG": "task updated"});
+}
+
 const delete_task = (req, res) => {
     const taskId = req.params.id;
     Task.findByIdAndDelete(taskId)
@@ -32,7 +40,9 @@ const delete_task = (req, res) => {
 }
 
 module.exports = {
-    get_tasks,
+    get_all_tasks,
     post_task,
+    get_task,
+    update_task,
     delete_task
 }

@@ -6,7 +6,7 @@ getTask.addEventListener('submit', async (e) => {
     const task = getTask.task.value;
 
     try{
-        const res = await fetch('../add-task', {
+        const res = await fetch('/add-task', {
             method: 'POST',
             body: JSON.stringify({taskName: task}),
             headers: {'Content-Type': 'application/json'}
@@ -52,8 +52,6 @@ getTask.addEventListener('submit', async (e) => {
         // append the new task inside the tasks list
         taskList.appendChild(taskContainer);
 
-        // location.assign('../');
-
     } catch(err) {
         console.log(err);
     }
@@ -65,7 +63,7 @@ deleteTask.forEach((deleteBut) => {
     deleteBut.addEventListener('click', async (event) => {
         try{
                 const taskId = event.target.parentElement.parentElement.dataset.taskid;
-                deleteUrl = `../delete-task/${taskId}`;
+                deleteUrl = `/delete-task/${taskId}`;
                 const res = await fetch(deleteUrl, {method: 'DELETE'});
                 const data = await res.json();
 

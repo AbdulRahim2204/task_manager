@@ -92,6 +92,7 @@ form .send-task:hover{
 }
 
 #task-list .task p{
+    text-transform: capitalize;
     font-size: 18px;
 }
 

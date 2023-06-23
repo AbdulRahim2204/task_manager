@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const taskRouter = require('./routes/taskRouter');
+const task = require('./routes/task');
 
 const app = express();
 const PORT = 3000;
@@ -27,6 +27,6 @@ app.use([
     express.json(),
 ]);
 
-app.use('/', taskRouter);
+app.use('/api/v1/tasks', task);
 
 // DB => AbdoTaskManager
