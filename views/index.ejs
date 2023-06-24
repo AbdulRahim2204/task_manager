@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <form>
@@ -22,8 +22,8 @@
                     <div class="task" data-taskid="<%= task._id %>">
                         <p class="task-name"><%= task.name %></p>
                         <div class="edit-delete">
-                            <img class="edit" src="../IMG/edit.svg" alt="Edit Icon">
-                            <img class="delete" src="../IMG/delete.svg" alt="Trashcan Icon">
+                            <img class="edit" src="/IMG/edit.svg" alt="Edit Icon">
+                            <img class="delete" src="/IMG/delete.svg" alt="Trashcan Icon">
                         </div>
                     </div>
                 <% }) %>
@@ -32,8 +32,8 @@
                 <div class="task" data-taskid="<%= task._id %>">
                     <p class="task-name"><%= data.name %></p>
                     <div class="edit-delete">
-                        <img class="edit" src="../IMG/edit.svg" alt="Edit Icon">
-                        <img class="delete" src="../IMG/delete.svg" alt="Trashcan Icon">
+                        <img class="edit" src="/IMG/edit.svg" alt="Edit Icon">
+                        <img class="delete" src="/IMG/delete.svg" alt="Trashcan Icon">
                     </div>
                 </div>
             <% } %>
@@ -41,6 +41,6 @@
     <% } else { %>
         <p>NO Task!</p>
     <% } %>
-    <script src="../main.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>

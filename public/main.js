@@ -6,7 +6,7 @@ getTask.addEventListener('submit', async (e) => {
     const task = getTask.task.value;
 
     try{
-        const res = await fetch('/add-task', {
+        const res = await fetch('/api/v1/tasks', {
             method: 'POST',
             body: JSON.stringify({taskName: task}),
             headers: {'Content-Type': 'application/json'}
@@ -36,11 +36,11 @@ getTask.addEventListener('submit', async (e) => {
 
         // creating the edit button
         const editTask = document.createElement('img');
-        editTask.src = './IMG/edit.svg';
+        editTask.src = '/IMG/edit.svg';
 
         // creating the delete button
         const deleteTask = document.createElement('img');
-        deleteTask.src = './IMG/delete.svg';
+        deleteTask.src = '/IMG/delete.svg';
 
         // appending the edit and delete button inside there container
         editDeleteTask.appendChild(editTask);
@@ -63,7 +63,7 @@ deleteTask.forEach((deleteBut) => {
     deleteBut.addEventListener('click', async (event) => {
         try{
                 const taskId = event.target.parentElement.parentElement.dataset.taskid;
-                deleteUrl = `/delete-task/${taskId}`;
+                deleteUrl = `/api/v1/tasks/${taskId}`;
                 const res = await fetch(deleteUrl, {method: 'DELETE'});
                 const data = await res.json();
 
@@ -73,5 +73,23 @@ deleteTask.forEach((deleteBut) => {
             } catch(err){
                 console.log(err);
             }
+    })
+})
+
+// this code is used to send a update request to the server
+const updateTask = document.querySelectorAll('#task-list .update');
+
+updateTask.forEach((updateBut) => {
+    updateBut.addEventListener('click', async (event) => {
+        try{
+            const taskId = event.target.parentElement.parentElement.dataset.taskid;
+            taskToUpdateUrl = `/api/v1/tasks/${taskId}`;
+            
+            const res = await fetch(taskToUpdateUrl, {method: 'PATCH'});
+            const updatedTask = await res.json();
+
+        } catch(err) {
+            console.log(err);
+        }
     })
 })
